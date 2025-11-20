@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import EventOverview from "./pages/EventOverview";
+import WhoWillYouMeet from "./pages/WhoWillYouMeet";
+import TopicHighlights from "./pages/TopicHighlights";
+import WhyAttend from "./pages/WhyAttend";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={styles.page}>
+        <Navbar />
+
+        <div style={styles.content}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/event-overview" element={<EventOverview />} />
+            <Route path="/who-you-will-meet" element={<WhoWillYouMeet />} />
+            <Route path="/topic-highlights" element={<TopicHighlights />} />
+            <Route path="/why-attend" element={<WhyAttend />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
+
+const styles = {
+  page: {
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh", // full viewport height
+  },
+  content: {
+    flex: 1, // takes up remaining space, pushing footer down
+  },
+};
 
 export default App;
