@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <div>
 
-      {/* HERO VIDEO SECTION */}
+    
       <HeroVideo />
 
-      {/* Event Overview */}
+     
       <Section bg="#ffffff" title="Event Overview">
         <p style={styles.text}>
           The banking industry is transforming at lightning speed and the Future Banks Summit KSA 
@@ -18,7 +18,7 @@ export default function Home() {
         <Link to="/event-overview" style={styles.buttonLight}>Learn More →</Link>
       </Section>
 
-      {/* Who Will You Meet */}
+     
       <Section bg="#002b5b" title="Who Will You Meet?" textColor="white">
         <p style={styles.textLight}>
           Meet CIOs, CTOs, Digital Transformation Chiefs, Banking Leaders, 
@@ -28,7 +28,7 @@ export default function Home() {
         <Link to="/who-you-will-meet" style={styles.buttonWhite}>Learn More →</Link>
       </Section>
 
-      {/* Topic Highlights */}
+
       <Section bg="#ffffff" title="Topic Highlights">
         <p style={styles.text}>
           Discover the latest in AI Banking, Open Banking, Metaverse Experiences, Cloud Migration, 
@@ -37,7 +37,7 @@ export default function Home() {
         <Link to="/topic-highlights" style={styles.buttonLight}>Learn More →</Link>
       </Section>
 
-      {/* Why Attend */}
+
       <Section bg="#E8E8E8" title="Why Attend?" textColor="black">
         <p style={styles.textDark}>
           Gain insights from global experts, network with industry leaders, explore real case studies, 
@@ -50,9 +50,7 @@ export default function Home() {
   );
 }
 
-/* --------------------------------------------
-   REUSABLE SECTION COMPONENT
---------------------------------------------- */
+
 function Section({ bg, title, textColor = "black", children }) {
   return (
     <section style={{ ...styles.section, background: bg, color: textColor }}>
@@ -62,9 +60,7 @@ function Section({ bg, title, textColor = "black", children }) {
   );
 }
 
-/* --------------------------------------------
-   REUSABLE STYLES
---------------------------------------------- */
+
 const styles = {
   section: {
     padding: "60px 40px",
